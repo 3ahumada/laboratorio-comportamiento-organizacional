@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratorio de Comportamiento Organizacional</title>
+  <meta name="description" content="Simulador gerencial para Maestría en Administración: comportamiento individual, personalidad, actitudes, roles gerenciales y conductas en el trabajo." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Maestría en Administración · Unidad II</p>
+      <h1>Laboratorio de Comportamiento Organizacional</h1>
+      <p class="lead">Analiza personas, contextos y decisiones gerenciales. Aquí no basta con identificar conceptos: tendrás que decidir, justificar y asumir consecuencias.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#casos">Entrar al laboratorio</a>
+        <button class="btn ghost" id="resetBtn">Reiniciar progreso</button>
+      </div>
+      <div class="progress-shell" aria-label="Progreso">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <p id="progressText" class="progress-text">0 de 5 actividades completadas</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>Pregunta central</h2>
+      <blockquote>¿Cómo puede un gerente explicar, anticipar y gestionar el comportamiento individual sin reducir los problemas organizacionales a “esa persona es así”?</blockquote>
+      <div class="grid concepts">
+        <article><h3>Bases del comportamiento</h3><p>Percepción, atribución, aprendizaje, valores, capacidades y contexto.</p></article>
+        <article><h3>Roles gerenciales</h3><p>Decisiones, comunicación, supervisión, negociación y responsabilidad sobre el sistema de trabajo.</p></article>
+        <article><h3>Personalidad</h3><p>Big Five, autoeficacia, locus de control y ajuste persona–puesto.</p></article>
+        <article><h3>Actitudes</h3><p>Satisfacción, compromiso, engagement, justicia percibida e intención de salida.</p></article>
+        <article><h3>Conductas laborales</h3><p>Desempeño, ciudadanía, retiro psicológico, ausentismo y conductas contraproducentes.</p></article>
+      </div>
+    </section>
+
+    <section id="casos">
+      <div class="section-heading">
+        <p class="eyebrow">Casos gerenciales</p>
+        <h2>Toma decisiones bajo incertidumbre</h2>
+      </div>
+
+      <article class="case" data-case="1">
+        <div class="case-head">
+          <span class="case-number">Caso 01</span>
+          <div><h3>¿A quién asciendes?</h3><p>Personalidad, desempeño y ajuste persona–puesto.</p></div>
+        </div>
+        <p>Una empresa debe nombrar a su próximo gerente comercial. Los cuatro candidatos presentan fortalezas y riesgos distintos.</p>
+        <div class="candidate-grid">
+          <div class="candidate"><strong>A</strong><span>Desempeño sobresaliente</span><small>Baja amabilidad · alta estabilidad emocional · 3 conflictos formales</small></div>
+          <div class="candidate"><strong>B</strong><span>Liderazgo informal alto</span><small>Alta responsabilidad y extraversión · desempeño ligeramente inferior</small></div>
+          <div class="candidate"><strong>C</strong><span>Mejor desempeño histórico</span><small>Alta autoeficacia · intención de salida elevada</small></div>
+          <div class="candidate"><strong>D</strong><span>Desempeño técnico medio</span><small>Mayor colaboración · menor rotación en su equipo</small></div>
+        </div>
+        <label>Selecciona a quién promoverías
+          <select id="promocion">
+            <option value="">Selecciona...</option>
+            <option value="A">Candidato A</option><option value="B">Candidato B</option>
+            <option value="C">Candidato C</option><option value="D">Candidato D</option>
+          </select>
+        </label>
+        <label>Justifica tu decisión
+          <textarea id="promocionJust" placeholder="¿Qué evidencia pesa más y qué riesgos estás aceptando?"></textarea>
+        </label>
+        <button class="btn primary complete" data-target="1">Guardar decisión</button>
+        <div class="feedback" id="feedback1"></div>
+      </article>
+
+      <article class="case" data-case="2">
+        <div class="case-head">
+          <span class="case-number">Caso 02</span>
+          <div><h3>¿Mala actitud o mal diagnóstico?</h3><p>Actitudes, atribución y justicia organizacional.</p></div>
+        </div>
+        <p>“Carlos tiene una pésima actitud. Antes era de los mejores, pero desde hace cuatro meses llega tarde, participa poco y dejó de proponer ideas. Estoy considerando reemplazarlo.”</p>
+        <div class="reveal-box">
+          <button class="btn small reveal" data-reveal="r1">Revelar información 1</button>
+          <p id="r1" hidden>Carlos recibió una evaluación de desempeño menor que la esperada.</p>
+          <button class="btn small reveal" data-reveal="r2">Revelar información 2</button>
+          <p id="r2" hidden>Después de la renuncia de un compañero asumió funciones adicionales, sin cambio de puesto ni salario.</p>
+          <button class="btn small reveal" data-reveal="r3">Revelar información 3</button>
+          <p id="r3" hidden>Su gerente considera que “si quisiera crecer, tendría que demostrar mayor compromiso”.</p>
+        </div>
+        <label>¿Cuál es tu diagnóstico gerencial?
+          <textarea id="carlosDiag" placeholder="Distingue conducta observable, posibles causas individuales y posibles causas del contexto."></textarea>
+        </label>
+        <label>¿Qué harías primero?
+          <select id="carlosDecision">
+            <option value="">Selecciona...</option>
+            <option>Reemplazarlo</option>
+            <option>Aplicar una sanción formal</option>
+            <option>Realizar una conversación diagnóstica estructurada</option>
+            <option>Enviar a capacitación</option>
+            <option>Modificar su compensación inmediatamente</option>
+          </select>
+        </label>
+        <button class="btn primary complete" data-target="2">Guardar diagnóstico</button>
+        <div class="feedback" id="feedback2"></div>
+      </article>
+
+      <article class="case" data-case="3">
+        <div class="case-head">
+          <span class="case-number">Caso 03</span>
+          <div><h3>El gerente también es parte del problema</h3><p>Roles gerenciales, sesgos y toma de decisiones.</p></div>
+        </div>
+        <p>Una gerente afirma que su equipo “carece de iniciativa”, pero centraliza decisiones, corrige en público y exige aprobación para cualquier cambio operativo.</p>
+        <fieldset>
+          <legend>Marca los problemas que observas</legend>
+          <label class="check"><input type="checkbox" value="atribucion"> Error de atribución</label>
+          <label class="check"><input type="checkbox" value="control"> Exceso de control</label>
+          <label class="check"><input type="checkbox" value="rol"> Incongruencia entre el rol gerencial y la autonomía esperada</label>
+          <label class="check"><input type="checkbox" value="personalidad"> La personalidad de los colaboradores explica por sí sola la situación</label>
+          <label class="check"><input type="checkbox" value="clima"> Clima de seguridad psicológica posiblemente bajo</label>
+        </fieldset>
+        <label>Intervención prioritaria
+          <textarea id="gerenteIntervencion" placeholder="¿Qué cambiarías en el comportamiento de la gerente y cómo evaluarías el efecto?"></textarea>
+        </label>
+        <button class="btn primary complete" data-target="3">Guardar intervención</button>
+        <div class="feedback" id="feedback3"></div>
+      </article>
+
+      <article class="case" data-case="4">
+        <div class="case-head">
+          <span class="case-number">Caso 04</span>
+          <div><h3>Comité Ejecutivo</h3><p>Diagnóstico integrador y priorización de intervenciones.</p></div>
+        </div>
+        <p>Tienes presupuesto para intervenir solamente en <strong>tres</strong> situaciones.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Empleado</th><th>Desempeño</th><th>Ausentismo</th><th>Satisfacción</th><th>Intención de salida</th><th>Señal</th></tr></thead>
+            <tbody>
+              <tr><td>Ana</td><td>Alto</td><td>Bajo</td><td>Baja</td><td>Alta</td><td>Resultados buenos, desconexión creciente</td></tr>
+              <tr><td>Bruno</td><td>Medio</td><td>Alto</td><td>Media</td><td>Media</td><td>Carga de trabajo + errores recientes</td></tr>
+              <tr><td>Carla</td><td>Alto</td><td>Bajo</td><td>Alta</td><td>Baja</td><td>Conflictos interpersonales frecuentes</td></tr>
+              <tr><td>Diego</td><td>Bajo</td><td>Bajo</td><td>Alta</td><td>Baja</td><td>Rol nuevo, poca claridad de expectativas</td></tr>
+              <tr><td>Elena</td><td>Medio</td><td>Medio</td><td>Baja</td><td>Alta</td><td>Percibe inequidad en promociones</td></tr>
+              <tr><td>Fabián</td><td>Alto</td><td>Bajo</td><td>Media</td><td>Baja</td><td>Ayuda al equipo, pero reporta agotamiento</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <fieldset id="prioridades">
+          <legend>Selecciona máximo tres prioridades</legend>
+          <label class="check"><input type="checkbox" value="Ana"> Ana</label>
+          <label class="check"><input type="checkbox" value="Bruno"> Bruno</label>
+          <label class="check"><input type="checkbox" value="Carla"> Carla</label>
+          <label class="check"><input type="checkbox" value="Diego"> Diego</label>
+          <label class="check"><input type="checkbox" value="Elena"> Elena</label>
+          <label class="check"><input type="checkbox" value="Fabián"> Fabián</label>
+        </fieldset>
+        <label>Defiende tu priorización
+          <textarea id="prioridadJust" placeholder="¿Qué problema atenderías, qué hipótesis tienes y qué indicador usarías para evaluar la intervención?"></textarea>
+        </label>
+        <button class="btn primary complete" data-target="4">Guardar comité</button>
+        <div class="feedback" id="feedback4"></div>
+      </article>
+
+      <article class="case ai-case" data-case="5">
+        <div class="case-head">
+          <span class="case-number">AI Challenge</span>
+          <div><h3>Audita esta recomendación</h3><p>Evalúa la calidad del razonamiento, no la fluidez del texto.</p></div>
+        </div>
+        <div class="ai-answer">
+          <p><strong>Recomendación de IA:</strong> “Carlos muestra baja motivación y una personalidad poco comprometida con la organización. Debido a sus retrasos y menor participación, la empresa debería sustituirlo antes de que su actitud afecte al equipo. La contratación de una persona más proactiva resolvería el problema.”</p>
+        </div>
+        <label>Identifica errores, supuestos y evidencia faltante
+          <textarea id="aiAudit" placeholder="Busca inferencias no sustentadas, errores de atribución, causalidad, evidencia faltante y riesgos de la recomendación."></textarea>
+        </label>
+        <button class="btn primary complete" data-target="5">Guardar auditoría</button>
+        <div class="feedback" id="feedback5"></div>
+      </article>
+    </section>
+
+    <section class="report">
+      <p class="eyebrow">Cierre</p>
+      <h2>Informe de decisión gerencial</h2>
+      <p>Cuando termines, genera un resumen de tus decisiones para discutirlo en clase o integrarlo a tu entrega.</p>
+      <button class="btn primary" id="reportBtn">Generar informe</button>
+      <button class="btn ghost" id="copyBtn">Copiar informe</button>
+      <pre id="reportOutput">Tu informe aparecerá aquí.</pre>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><p>Laboratorio de Comportamiento Organizacional · Unidad II · Maestría en Administración</p></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
